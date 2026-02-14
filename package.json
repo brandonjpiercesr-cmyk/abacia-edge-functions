@@ -1,0 +1,10 @@
+{
+  "name": "abacia-edge-functions",
+  "version": "1.0.0",
+  "description": "ABACIA Supabase Edge Functions - 80 Agents",
+  "scripts": {
+    "deploy": "supabase functions deploy --project-ref htlxjkbrstpwwtzsbyvb",
+    "deploy:sage": "supabase functions deploy sage --project-ref htlxjkbrstpwwtzsbyvb",
+    "deploy:all": "for f in sage dawn iman radar luke sync shadow vara hear tim draft quill hunter dod mark grit; do supabase functions deploy $f --project-ref htlxjkbrstpwwtzsbyvb; done"
+  }
+}
