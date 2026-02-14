@@ -1,0 +1,38 @@
+name: Deploy Supabase Edge Functions
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      
+      - name: Deploy Functions
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          supabase functions deploy sage --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy dawn --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy iman --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy radar --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy luke --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy sync --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy shadow --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy vara --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy hear --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy tim --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy draft --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy quill --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy hunter --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy dod --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy mark --project-ref htlxjkbrstpwwtzsbyvb
+          supabase functions deploy grit --project-ref htlxjkbrstpwwtzsbyvb
